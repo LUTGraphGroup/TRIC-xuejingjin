@@ -5,15 +5,7 @@ ICD code mapping model based on clinical text tree structure
 
 This project proposes an ICD code mapping model leveraging the tree structure of clinical text (e.g., hierarchical medical terminology). It integrates data preprocessing, tree-structured feature extraction, and deep learning to automatically map unstructured clinical notes to ICD codes.  
 
-2. Environment Setup
-
-• Python 3.7+  
-
-• Install dependencies: Create a requirements.txt with core libraries (e.g., torch, transformers, pandas, scikit-learn) and run:  
-  pip install -r requirements.txt
-    
-
-3. Usage Workflow
+2. Usage Workflow
 
 Follow these steps to execute the model:  
 
@@ -81,7 +73,7 @@ predicted_codes = predict_icd(text)
 print(f"Predicted ICD codes: {predicted_codes}")
   
 
-4. File Responsibilities
+3. File Responsibilities
 
 File Core Function
 config.py Centralize hyperparameters (learning rate, batch size, tree depth, etc.).
@@ -92,13 +84,3 @@ metrics.py Define evaluation metrics (accuracy, F1-score for multi-label ICD).
 training.py Implement training loop (loss function, optimizer, early stopping).
 main.py Orchestrate end-to-end workflow (preprocess → train → predict).
   
-
-5. Key Notes
-
-• Ensure raw data paths (e.g., MIMIC-III) are correctly set in config.py or data processor.  
-
-• For pre-trained embeddings (e.g., BioWordVec), update utils.py with embedding file paths.  
-
-• Tune tree structure parameters (e.g., tree_depth in config.py) based on clinical text complexity.  
-
-This workflow enables automated ICD code mapping by combining clinical text’s tree structure with deep learning, improving accuracy over traditional flat-text approaches.
